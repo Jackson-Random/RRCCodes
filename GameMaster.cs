@@ -17,7 +17,7 @@ public class GameMaster : MonoBehaviour
     public ExtraHandler extraHandler;
 
     
-
+    //both generates values that will be changed in next void, and calculates if you get a win
     public void inistiateGamble()
     {
         int.TryParse(input.text, out int result);
@@ -78,6 +78,7 @@ public class GameMaster : MonoBehaviour
         }
     }
 
+    //turns values generated earlier into a simple range of one to seven
     public void changeValues()
     {
         int currentValueChanging = value1;
@@ -168,6 +169,7 @@ public class GameMaster : MonoBehaviour
         }
     }
 
+    //calculates what needs to be given to theb player depending on if they win, and if they failed enough times for a pity win
     void giverewards(bool checkWild)
     {
         if(win)
