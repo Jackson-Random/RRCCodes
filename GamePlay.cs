@@ -16,6 +16,7 @@ public class GamePlay : MonoBehaviour
     public bool placementNeeded = false;
     int slotFilled;
     
+    //void that adds both player and enemy main cards, as well as deck tokens
     void Start()
     {
         for(int i = 0; i < 4; i++)
@@ -75,6 +76,7 @@ public class GamePlay : MonoBehaviour
         
     }
 
+    //Void that is called upon completing battle phase
     void startOfTurn()
     {
         startTurn = true;
@@ -110,6 +112,7 @@ public class GamePlay : MonoBehaviour
         }
     }
 
+    //all four identical voids do the same function, setting up where a card will be placed
     public void setCard1()
     {
         if(playerCards[0] == null)
@@ -197,6 +200,7 @@ public class GamePlay : MonoBehaviour
     }
     */
 
+    //drawing a card
     public void addRandomCard()
     {
         if(startTurn == false)
@@ -218,6 +222,7 @@ public class GamePlay : MonoBehaviour
         }
     }
 
+    //void where the cards battle their lane, and calculate health and if they live
     public void battleCards()
     {
         if(startTurn)
@@ -251,6 +256,7 @@ public class GamePlay : MonoBehaviour
         
     }
 
+    //void where cards actually get placed in their correct slot
     public void placementTime(GameObject cardPlaced)
     {
         GameObject currentCard = cardComplications.checkCurrentCard();
