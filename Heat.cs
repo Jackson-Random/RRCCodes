@@ -16,6 +16,7 @@ public class Heat : MonoBehaviour
         slider.value = Cold;
     }
     
+    //main timer
     void Update()
     {
        Timer -= Time.deltaTime;
@@ -24,6 +25,7 @@ public class Heat : MonoBehaviour
        } 
     }
 
+    //Activated once timer above reaches zero
     void timerEnd(){
         Cold -= 2;
         slider.value = Cold;
