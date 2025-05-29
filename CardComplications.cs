@@ -12,6 +12,7 @@ public class CardComplications : MonoBehaviour
     public int indexNum;
     bool enemyCard = true;
 
+    //creates starting card hand
     void Start()
     {
         for(int i = 0; i < 5; i++)
@@ -25,6 +26,7 @@ public class CardComplications : MonoBehaviour
         }
     }
 
+    //adds a card to your hand via a list system
     public void addCard()
     {
         if(currentIndex >= 0)
@@ -37,6 +39,7 @@ public class CardComplications : MonoBehaviour
         cardList[currentIndex].SetActive(true);
     }
 
+    //both these two go through your hand to select your card
     public void upTheList()
     {
         if(currentIndex == cardList.Count - 1)
@@ -65,6 +68,7 @@ public class CardComplications : MonoBehaviour
         }
     }
 
+    //void where two cards battle, and die if health is dropped to zero
     public void compareCards(GameObject mainCard, GameObject enemCard)
     {
         int currentAttack = mainCard.GetComponent<CardBasics>().attack;
@@ -107,6 +111,7 @@ public class CardComplications : MonoBehaviour
         }
     }
 
+    //adds enemy card to enemy side
     public GameObject spawnEnemyCard(string enemLocal)
     {
         if(enemyCard == true)
@@ -123,6 +128,7 @@ public class CardComplications : MonoBehaviour
         return enemyThe;
     }
 
+    //places card in slot where listed in other script
     public GameObject placeCard(string objectLocal, GameObject cardSacrifice)
     {
         GameObject card = (GameObject)Instantiate(cardList[currentIndex], GameObject.Find(objectLocal).transform.position, Quaternion.identity, canvas.transform);
@@ -145,6 +151,7 @@ public class CardComplications : MonoBehaviour
         return card;
     }
 
+//voids mainly used for GamePlay script
     public GameObject addToHand()
     {
         addCard();
